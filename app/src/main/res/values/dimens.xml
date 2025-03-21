@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="def_padding">16dp</dimen>
+    <dimen name="settings_height_layout">56dp</dimen>
+    <dimen name="def_settings_text_size">16sp</dimen>
+    <dimen name="bar_text_size">12sp</dimen>
+    <dimen name="bar_padding">8dp</dimen>
+    <dimen name="main_head_text_size">22sp</dimen>
+    <dimen name="main_between_buttons">8dp</dimen>
+    <dimen name="main_button_radius">16dp</dimen>
+    <dimen name="button_back">24dp</dimen>
+    <dimen name="head_text_setting_size">22sp</dimen>
+    <dimen name="layout_padding_top">14dp</dimen>
+    <dimen name="layout_blocks_height">48dp</dimen>
+
+
+</resources>
