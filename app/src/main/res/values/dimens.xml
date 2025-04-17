@@ -13,7 +13,7 @@
     <dimen name="layout_padding_top">14dp</dimen>
     <dimen name="layout_blocks_height">48dp</dimen>
     <dimen name="zero_dp">0dp</dimen>
-    <dimen name="bar_border_height">0.5dp</dimen>
+    <dimen name="bar_border_height">1dp</dimen>
 
 
 

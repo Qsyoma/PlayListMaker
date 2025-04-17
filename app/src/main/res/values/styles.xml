@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Стиль для RelativeLayout, содержащего кнопку и текст с иконкой -->
+    <style name="MainButtonRelativeLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/zero_dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">@dimen/main_between_buttons</item>
+    </style>
+
+    <!-- Стиль для кнопок главного экрана -->
+    <style name="MainScreenButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginHorizontal">@dimen/def_padding</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:elevation">1dp</item>
+        <item name="cornerRadius">@dimen/main_button_radius</item>
+    </style>
+
+    <!-- Стиль для LinearLayout, содержащего иконку и текст на кнопке -->
+    <style name="ButtonContentLinearLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+
+    <!-- Стиль для иконок на кнопках -->
+    <style name="ButtonIcon">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginEnd">@dimen/main_between_buttons</item>
+    </style>
+
+    <!-- Стиль для текста на кнопках -->
+    <style name="ButtonText">
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/YP_black</item>
+        <item name="android:textSize">@dimen/main_head_text_size</item>
+    </style>
+
+
+
+
+    <!-- ==========================SettingActivity============================= -->
+
+
+
+
+    <!-- Стиль для контейнера пункта меню -->
+    <style name="SettingsMenuContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/settings_height_layout</item>
+        <item name="android:paddingHorizontal">@dimen/def_padding</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- Стиль для текста пункта меню -->
+    <style name="SettingsMenuText">
+        <item name="fontFamily">@font/ys_display_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/YP_black</item>
+        <item name="android:textSize">@dimen/def_settings_text_size</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+    <!-- Стиль для иконки пункта меню (не свитч)-->
+    <style name="SettingsMenuIcon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+
+    <!-- Стиль для кнопок в таб-баре -->
+    <style name="TabBarButtonStyle">
+        <item name="android:layout_width">@dimen/zero_dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Стиль для текста в таб-баре -->
+    <style name="TabBarTextStyle">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/bar_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- Стиль для иконок в таб-баре -->
+    <style name="TabBarIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/bar_padding</item>
+    </style>
+
+
+
+
+    <!-- ==========================TOPofLayouts============================= -->
+
+
+<style name="TopMainLayout">
+<item name="android:orientation">horizontal</item>
+<item name="android:layout_width">match_parent</item>
+<item name="android:layout_height">70dp</item>
+<item name="android:background">@color/white</item>
+<item name="android:paddingHorizontal">4dp</item>
+<item name="android:paddingTop">@dimen/layout_padding_top</item>
+</style>
+
+    <!-- Стиль для RelativeLayout кнопки поиска -->
+
+<style name="TopButtonBackLayout">
+<item name="android:layout_width">@dimen/layout_blocks_height</item>
+<item name="android:layout_height">@dimen/layout_blocks_height</item>
+</style>
+
+    <!-- Стиль для ImageButton -->
+
+<style name="TopBackButton">
+<item name="android:layout_centerVertical">true</item>
+<item name="android:backgroundTint">@color/white</item>
+<item name="android:layout_width">wrap_content</item>
+<item name="android:layout_height">wrap_content</item>
+<item name="android:src">@drawable/back_button_arrow</item>
+</style>
+
+    <!-- Стиль для RelativeLayout с TextView -->
+
+<style name="TopTextLayout">
+<item name="android:layout_width">wrap_content</item>
+<item name="android:layout_height">@dimen/layout_blocks_height</item>
+</style>
+
+    <!-- Стиль для TextView заголовка -->
+
+<style name="TopText">
+<item name="android:fontFamily">@font/ys_display_medium</item>
+<item name="android:layout_marginTop">10dp</item>
+<item name="android:layout_marginRight">12dp</item>
+<item name="android:layout_centerInParent">true</item>
+<item name="android:layout_width">wrap_content</item>
+<item name="android:layout_height">wrap_content</item>
+<item name="android:layout_gravity">start</item>
+<item name="android:textColor">@color/YP_black</item>
+<item name="android:textSize">@dimen/head_text_setting_size</item>
+<item name="android:textStyle">bold</item>
+</style>
+
+</resources>

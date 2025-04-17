@@ -3,7 +3,9 @@
     android:id="@+id/settings_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
     <LinearLayout
         android:layout_marginBottom="@dimen/settings_height_layout"
         android:background="@color/white"
@@ -13,76 +15,47 @@
 
 
         <LinearLayout
-            android:orientation="horizontal"
             android:id="@+id/top_settings"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@color/white"
-            android:paddingHorizontal="4dp"
-            android:paddingTop="@dimen/layout_padding_top">
+            style="@style/TopMainLayout">
 
             <RelativeLayout
-                android:id="@+id/button_sear"
-                android:layout_width="@dimen/layout_blocks_height"
-                android:layout_height="@dimen/layout_blocks_height"
-                android:clipToOutline="true"
-                >
+                android:id="@+id/settings_top_back_button"
+                style="@style/TopButtonBackLayout">
+
                 <ImageButton
                     android:id="@+id/settings_back_button"
-                    android:layout_centerVertical="true"
-                    android:backgroundTint="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/back_button_arrow"/>
+                    style="@style/TopBackButton" />
 
             </RelativeLayout>
 
+            <RelativeLayout
+                style="@style/TopTextLayout">
 
+                <TextView
+                    style="@style/TopText"
+                    android:text="@string/settings" />
 
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/layout_blocks_height">
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="12dp"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/settings"
-                android:textColor="@color/YP_black"
-                android:textSize="@dimen/head_text_setting_size"
-                android:textStyle="bold" />
-</RelativeLayout>
+            </RelativeLayout>
+
         </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <LinearLayout
 
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:orientation="vertical">
 
-
-
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:layout_marginTop="@dimen/def_padding"
-                    android:background="@color/white"
-                    android:paddingHorizontal="@dimen/def_padding">
+                    style="@style/SettingsMenuContainer"
+                    android:layout_marginTop="@dimen/def_padding">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/night_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size" />
+                        style="@style/SettingsMenuText"
+                        android:text="@string/night_settings"/>
 
                     <Switch
                         android:id="@+id/night_settings_switch"
@@ -90,200 +63,129 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true" />
+
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:paddingHorizontal="@dimen/def_padding">
-
+                    android:id="@+id/settings_button_share"
+                    style="@style/SettingsMenuContainer">
 
                     <TextView
-                        android:gravity=""
-                        android:id="@+id/share_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/share_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size"
-                        android:layout_centerVertical="true"/>
-
+                        style="@style/SettingsMenuText"
+                        android:text="@string/share_settings"/>
 
                     <ImageView
+                        style="@style/SettingsMenuIcon"
                         android:id="@+id/settings_share"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/baseline_share_24"
-                        android:layout_centerVertical="true"/>
+                        android:src="@drawable/baseline_share_24"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:paddingHorizontal="@dimen/def_padding">
-
+                    android:id="@+id/settings_support_button"
+                    style="@style/SettingsMenuContainer">
 
                     <TextView
-                        android:id="@+id/support_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/support_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size"
-                        android:layout_centerVertical="true"/>
-
+                        style="@style/SettingsMenuText"
+                        android:text="@string/support_settings"/>
 
                     <ImageView
+                        style="@style/SettingsMenuIcon"
                         android:id="@+id/settings_support"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/support_settings_img"
-                        android:layout_centerVertical="true"/>
+                        android:src="@drawable/support_settings_img"/>
+
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:paddingHorizontal="@dimen/def_padding"
-                    >
-
+                    style="@style/SettingsMenuContainer">
 
                     <TextView
-                        android:id="@+id/contract_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contract_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size"
-                        android:layout_centerVertical="true"/>
-
+                        style="@style/SettingsMenuText"
+                        android:text="@string/contract_settings"/>
 
                     <ImageView
+                        style="@style/SettingsMenuIcon"
                         android:id="@+id/settings_contract"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/contract_settings_img" />
+                        android:src="@drawable/contract_settings_img"/>
                 </RelativeLayout>
 
             </LinearLayout>
+
         </ScrollView>
 
 
     </LinearLayout>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    android:clipToOutline="true">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bar_border_height"
+        android:background="@color/YP_light_gray"/>
+
     <LinearLayout
         android:id="@+id/tab_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/settings_height_layout"
-        android:layout_alignParentBottom="true"
-        android:clipToOutline="true"
         android:background="@color/white"
         android:orientation="horizontal">
 
-
         <LinearLayout
+            style="@style/TabBarButtonStyle"
             android:id="@+id/bar_search_button"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bar_border_height"
-                android:background="@color/bar_border_color"
-                 />
+           >
 
             <ImageView
-                android:layout_marginTop="@dimen/bar_padding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bar_serch"
-                android:layout_gravity="center"
-                />
+                style="@style/TabBarIconStyle"
+                android:src="@drawable/bar_serch"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
+                style="@style/TabBarTextStyle"
                 android:text="@string/search"
-                android:textSize="@dimen/bar_text_size"
-                android:textColor="@color/YP_black"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
+                android:textColor="@color/YP_black"/>
 
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/bar_media_button"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bar_border_height"
-                android:background="@color/bar_border_color"
-                />
+            style="@style/TabBarButtonStyle">
 
             <ImageView
-                android:layout_marginTop="@dimen/bar_padding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bar_media"
-                android:layout_gravity="center"/>
+                style="@style/TabBarIconStyle"
+                android:src="@drawable/bar_media"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
+                style="@style/TabBarTextStyle"
                 android:text="@string/mediateka"
-                android:textSize="@dimen/bar_text_size"
-                android:textColor="@color/YP_black"
-                android:layout_gravity="center"
-                />
+                android:textColor="@color/YP_black"/>
+
         </LinearLayout>
 
 
         <LinearLayout
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bar_border_height"
-                android:background="@color/bar_border_color"
-                />
+            style="@style/TabBarButtonStyle">
 
             <ImageView
-                android:layout_marginTop="@dimen/bar_padding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bar_settings_active"
-                android:layout_gravity="center"/>
+                style="@style/TabBarIconStyle"
+                android:src="@drawable/bar_settings_active"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
+                style="@style/TabBarTextStyle"
                 android:text="@string/settings"
-                android:textSize="@dimen/bar_text_size"
-                android:textColor="@color/YP_blue"
-                android:layout_gravity="center"
-                />
+                android:textColor="@color/YP_blue"/>
+
         </LinearLayout>
+
     </LinearLayout>
+
+    </LinearLayout>
+
+
+
 </RelativeLayout>
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,6 +15,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:fontFamily="@font/ys_display_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
@@ -27,114 +27,71 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_marginBottom="@dimen/main_between_buttons"
-        android:layout_marginTop="24dp"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/zero_dp">
+        style="@style/MainButtonRelativeLayout"
+        android:layout_marginTop="24dp">
 
         <Button
             android:id="@+id/main_button_search"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/def_padding"
-            android:backgroundTint="@color/white"
-            android:elevation="1dp"
-            app:cornerRadius="@dimen/main_button_radius" />
+            style="@style/MainScreenButton" />
+
         <LinearLayout
-            android:elevation="3dp"
-            android:id="@+id/txt_img"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            style="@style/ButtonContentLinearLayout">
 
             <ImageView
-                android:layout_marginEnd="@dimen/main_between_buttons"
-                android:layout_marginTop="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/ButtonIcon"
                 android:src="@drawable/bar_serch"/>
+
             <TextView
-                android:textSize="@dimen/main_head_text_size"
-                android:textColor="@color/YP_black"
-                android:text="@string/search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                style="@style/ButtonText"
+                android:text="@string/search"/>
 
         </LinearLayout>
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_marginBottom="@dimen/main_between_buttons"
-        android:layout_marginVertical="@dimen/main_between_buttons"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/zero_dp">
+        style="@style/MainButtonRelativeLayout"
+        android:layout_marginVertical="@dimen/main_between_buttons">
 
         <Button
             android:id="@+id/main_button_media"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/def_padding"
-            android:backgroundTint="@color/white"
-            android:elevation="1dp"
-            app:cornerRadius="@dimen/main_button_radius" />
+            style="@style/MainScreenButton" />
+
         <LinearLayout
-            android:elevation="3dp"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            style="@style/ButtonContentLinearLayout">
 
             <ImageView
-                android:layout_marginEnd="@dimen/main_between_buttons"
-                android:layout_marginTop="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/ButtonIcon"
                 android:src="@drawable/bar_media"/>
+
             <TextView
-                android:textSize="@dimen/main_head_text_size"
-                android:textColor="@color/YP_black"
-                android:text="@string/mediateka"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                style="@style/ButtonText"
+                android:text="@string/mediateka"/>
 
         </LinearLayout>
     </RelativeLayout>
+
     <RelativeLayout
-        android:layout_marginBottom="28dp"
+        style="@style/MainButtonRelativeLayout"
         android:layout_marginTop="@dimen/main_between_buttons"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/zero_dp">
+        android:layout_marginBottom="24dp">
 
         <Button
             android:id="@+id/main_button_settings"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/def_padding"
-            android:backgroundTint="@color/white"
-            android:elevation="1dp"
-            app:cornerRadius="@dimen/main_button_radius" />
+            style="@style/MainScreenButton"
+            />
+
         <LinearLayout
-            android:elevation="3dp"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:baselineAligned="false"
+            style="@style/ButtonContentLinearLayout">
 
             <ImageView
-                android:layout_marginEnd="@dimen/main_between_buttons"
-                android:layout_marginTop="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+
+                style="@style/ButtonIcon"
                 android:src="@drawable/settings_inactive"/>
+
             <TextView
-                android:textSize="@dimen/main_head_text_size"
-                android:textColor="@color/YP_black"
-                android:text="@string/settings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                style="@style/ButtonText"
+                android:text="@string/settings"/>
 
         </LinearLayout>
     </RelativeLayout>
