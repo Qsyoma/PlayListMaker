@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/settings_layout"
+    android:id="@+id/search_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
     android:fitsSystemWindows="true">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="?attr/colorPrimary"
         android:orientation="vertical"
         >
 
@@ -56,9 +58,10 @@
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingHorizontal="12dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/YP_text_gray"
-                android:textSize="16sp" />
+                android:textColor="@color/YP_black"
+                android:textColorHint="?attr/colorOnSecondary"
+                android:textSize="16sp"
+                android:textCursorDrawable="@drawable/edit_text_cursor"/>
 
             <ImageButton
                 android:id="@+id/clear_text_button"
@@ -76,7 +79,7 @@
 
     </LinearLayout>
 
-    <!-- <LinearLayout
+  <!--  <LinearLayout
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:orientation="vertical"
@@ -122,7 +125,7 @@
                  <TextView
                      style="@style/TabBarTextStyle"
                      android:text="@string/mediateka"
-                     android:textColor="@color/YP_black"/>
+                     android:textColor="?attr/colorOnPrimary"/>
 
              </LinearLayout>
 
@@ -137,7 +140,7 @@
                  <TextView
                      style="@style/TabBarTextStyle"
                      android:text="@string/settings"
-                     android:textColor="@color/YP_black"/>
+                     android:textColor="?attr/colorOnPrimary"/>
 
              </LinearLayout>
 

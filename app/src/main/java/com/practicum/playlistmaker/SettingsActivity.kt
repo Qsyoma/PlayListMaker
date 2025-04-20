@@ -3,7 +3,6 @@ package com.practicum.playlistmaker
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
@@ -19,14 +18,22 @@ class SettingsActivity: AppCompatActivity() {
         val barMediaButton = findViewById<LinearLayout>(R.id.bar_media_button)
         val shareButton = findViewById<RelativeLayout>(R.id.settings_button_share)
         val supportButton = findViewById<RelativeLayout>(R.id.settings_support_button)
+        val contractButton = findViewById<RelativeLayout>(R.id.settings_contract_button)
+
+        contractButton.setOnClickListener {
+            val contractIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.offerta_link)))
+            startActivity(contractIntent)
+        }
 
         supportButton.setOnClickListener {
-            val message = "Привет Android это круто"
-            val shareIntent = Intent(Intent.ACTION_SENDTO)
-            shareIntent.data = Uri.parse("mailto:")
-            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("kolesnikov.yk@ya.ru"))
-            shareIntent.putExtra(Intent.EXTRA_EMAIL, message)
-            startActivity(shareIntent)
+            val supportIntent =  Intent(Intent.ACTION_SEND_MULTIPLE).apply {
+                putExtra(Intent.EXTRA_EMAIL, arrayOf( getString(R.string.my_email)))
+                type = "text/plain"
+                putExtra(Intent.EXTRA_SUBJECT, getString(R.string.subject_to_support))
+                putExtra(Intent.EXTRA_TEXT, getString(R.string.message_to_support))
+
+            }
+            startActivity(Intent.createChooser(supportIntent, "Выберите email приложение"))
         }
 
         shareButton.setOnClickListener {
@@ -34,7 +41,7 @@ class SettingsActivity: AppCompatActivity() {
             val shareIntent = Intent(Intent.ACTION_SEND).apply { type = "text/plain"
                 putExtra(Intent.EXTRA_TEXT, message)
             }
-            startActivity(shareIntent)
+            startActivity(Intent.createChooser(shareIntent, "Поделиться"))
         }
 
         barMediaButton.setOnClickListener {
@@ -48,9 +55,8 @@ class SettingsActivity: AppCompatActivity() {
             finish()
         }
         backButton.setOnClickListener {
-            val backIntent = Intent(this, MainActivity::class.java)
-            startActivity(backIntent)
             finish()
         }
+
     }
 }

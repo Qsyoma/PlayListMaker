@@ -7,7 +7,10 @@
     <string name="contract_settings">Пользовательское cоглашение</string>
     <string name="search">Поиск</string>
     <string name="mediateka">Медиатека</string>
-    <string name="support_message">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="share_link">https://practicum.yandex.ru/android-developer</string>
+    <string name="my_email">kolesnikov.yk@ya.ru</string>
+    <string name="message_to_support">Спасибо разработчикам и разработчицам за крутое приложение!</string>
+    <string name="subject_to_support">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="offerta_link">https://yandex.ru/legal/practicum_offer/</string>
 
 </resources>
