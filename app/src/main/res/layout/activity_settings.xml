@@ -1,196 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/settings_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fitsSystemWindows="true"
-    android:background="?attr/colorPrimary">
-
-    <LinearLayout
-        android:layout_marginBottom="@dimen/settings_height_layout"
-        android:background="?attr/colorPrimary"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <LinearLayout
-            android:id="@+id/top_settings"
-            style="@style/TopMainLayout">
-
-            <RelativeLayout
-                android:id="@+id/settings_top_back_button"
-                style="@style/TopButtonBackLayout"
-                >
-
-                <ImageButton
-                    android:id="@+id/settings_back_button"
-                    style="@style/TopBackButton"
-                    android:layout_centerInParent="true"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                style="@style/TopTextLayout">
-
-                <TextView
-                    style="@style/TopText"
-                    android:text="@string/settings" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    style="@style/SettingsMenuContainer"
-                    android:layout_marginTop="@dimen/def_padding">
-
-                    <TextView
-                        style="@style/SettingsMenuText"
-                        android:text="@string/night_settings"/>
-
-                    <Switch
-                        android:id="@+id/night_settings_switch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:thumbTint="?attr/colorSecondaryVariant"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/settings_button_share"
-                    style="@style/SettingsMenuContainer">
-
-                    <TextView
-                        style="@style/SettingsMenuText"
-                        android:text="@string/share_settings"/>
-
-                    <ImageView
-                        style="@style/SettingsMenuIcon"
-                        android:id="@+id/settings_share"
-                        android:src="@drawable/baseline_share_24"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/settings_support_button"
-                    style="@style/SettingsMenuContainer">
-
-                    <TextView
-                        style="@style/SettingsMenuText"
-                        android:text="@string/support_settings"/>
-
-                    <ImageView
-                        style="@style/SettingsMenuIcon"
-                        android:id="@+id/settings_support"
-                        android:src="@drawable/support_settings_img"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/settings_contract_button"
-                    style="@style/SettingsMenuContainer">
-
-                    <TextView
-                        style="@style/SettingsMenuText"
-                        android:text="@string/contract_settings"/>
-
-                    <ImageView
-                        style="@style/SettingsMenuIcon"
-                        android:id="@+id/settings_contract"
-                        android:src="@drawable/contract_settings_img"/>
-                </RelativeLayout>
-
-            </LinearLayout>
-
-        </ScrollView>
-
-
-    </LinearLayout>
-
 <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_alignParentBottom="true"
-    android:clipToOutline="true">
+    style="@style/BaseScreenLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/bar_border_height"
-        android:background="@color/YP_light_gray"/>
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/TopLayout"
+        android:id="@+id/top_settings_toolbar"
+        app:title="@string/settings" />
 
-    <LinearLayout
-        android:id="@+id/tab_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/settings_height_layout"
-        android:background="?attr/colorPrimary"
-        android:orientation="horizontal">
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/settings_night_theme_switch"
+        style="@style/SettingsMenuContainer"
+        android:layout_marginTop="@dimen/def_padding"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/night_settings"/>
 
-        <LinearLayout
-            style="@style/TabBarButtonStyle"
-            android:id="@+id/bar_search_button"
-           >
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_button_share"
+        style="@style/SettingsMenuContainer"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/share_settings"
+        android:drawableEnd="@drawable/baseline_share_24"/>
 
-            <ImageView
-                style="@style/TabBarIconStyle"
-                android:src="@drawable/bar_serch"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_support_button"
+        style="@style/SettingsMenuContainer"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/support_settings"
+        android:drawableEnd="@drawable/support_settings_img"/>
 
-            <TextView
-                style="@style/TabBarTextStyle"
-                android:text="@string/search"
-                android:textColor="?attr/colorOnPrimary"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_contract_button"
+        style="@style/SettingsMenuContainer"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/contract_settings"
+        android:drawableEnd="@drawable/contract_settings_img"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/bar_media_button"
-            style="@style/TabBarButtonStyle">
-
-            <ImageView
-                style="@style/TabBarIconStyle"
-                android:src="@drawable/bar_media"/>
-
-            <TextView
-                style="@style/TabBarTextStyle"
-                android:text="@string/mediateka"
-                android:textColor="?attr/colorOnPrimary"/>
-
-        </LinearLayout>
+</LinearLayout>
 
 
-        <LinearLayout
-            style="@style/TabBarButtonStyle">
-
-            <ImageView
-                style="@style/TabBarIconStyle"
-                android:src="@drawable/bar_settings_active"/>
-
-            <TextView
-                style="@style/TabBarTextStyle"
-                android:text="@string/settings"
-                android:textColor="@color/YP_blue"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    </LinearLayout>
-
-
-
-</RelativeLayout>
 

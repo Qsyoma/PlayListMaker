@@ -3,22 +3,22 @@ package com.practicum.playlistmaker
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.material.textview.MaterialTextView
 
 class SettingsActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        val backButton = findViewById<ImageButton>(R.id.settings_back_button)
-        val barSearchButton = findViewById<LinearLayout>(R.id.bar_search_button)
-        val barMediaButton = findViewById<LinearLayout>(R.id.bar_media_button)
-        val shareButton = findViewById<RelativeLayout>(R.id.settings_button_share)
-        val supportButton = findViewById<RelativeLayout>(R.id.settings_support_button)
-        val contractButton = findViewById<RelativeLayout>(R.id.settings_contract_button)
+        val backButton = findViewById<MaterialToolbar>(R.id.top_settings_toolbar)
+        val shareButton = findViewById<MaterialTextView>(R.id.settings_button_share)
+        val supportButton = findViewById<MaterialTextView>(R.id.settings_support_button)
+        val contractButton = findViewById<MaterialTextView>(R.id.settings_contract_button)
+        //val barSearchButton = findViewById<LinearLayout>(R.id.bar_search_button)
+        //val barMediaButton = findViewById<LinearLayout>(R.id.bar_media_button)
 
         contractButton.setOnClickListener {
             val contractIntent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.offerta_link)))
@@ -44,19 +44,20 @@ class SettingsActivity: AppCompatActivity() {
             startActivity(Intent.createChooser(shareIntent, "Поделиться"))
         }
 
-        barMediaButton.setOnClickListener {
-            val barMediaIntent = Intent(this, MediaActivity::class.java)
-            startActivity(barMediaIntent)
+        backButton.setNavigationOnClickListener {
             finish()
         }
-        barSearchButton.setOnClickListener {
-            val barSearchIntent = Intent(this, SearchActivity::class.java)
-            startActivity(barSearchIntent)
-            finish()
-        }
-        backButton.setOnClickListener {
-            finish()
-        }
+
+//        barMediaButton.setOnClickListener {
+//            val barMediaIntent = Intent(this, MediaActivity::class.java)
+//            startActivity(barMediaIntent)
+//            finish()
+//        }
+//        barSearchButton.setOnClickListener {
+//            val barSearchIntent = Intent(this, SearchActivity::class.java)
+//            startActivity(barSearchIntent)
+//            finish()
+//        }
 
     }
 }

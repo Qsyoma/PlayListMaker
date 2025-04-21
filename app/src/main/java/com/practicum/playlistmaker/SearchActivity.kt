@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import com.google.android.material.appbar.MaterialToolbar
 
 
 class SearchActivity : AppCompatActivity() {
@@ -30,7 +32,7 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        val backButton = findViewById<ImageButton>(R.id.search_back_button)
+        val backButton = findViewById<MaterialToolbar>(R.id.top_search_toolbar)
         val searchEditText = findViewById<EditText>(R.id.search_edit_text)
         val clearButton = findViewById<ImageButton>(R.id.clear_text_button)
 
@@ -39,7 +41,7 @@ class SearchActivity : AppCompatActivity() {
             searchEditText.setText(searchTextInput)
         }
 
-        backButton.setOnClickListener {
+        backButton.setNavigationOnClickListener {
             finish()
         }
 
@@ -56,7 +58,7 @@ class SearchActivity : AppCompatActivity() {
                     searchTextInput = s.toString()
                 } else { searchTextInput = AMOUNT_DEF }
                 // searchTextInput = s?.toString() ?: AMOUNT_DEF
-                clearButton.visibility = if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
+                clearButton.isVisible = !s.isNullOrEmpty()
             }
 
         }

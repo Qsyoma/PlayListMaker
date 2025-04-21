@@ -12,5 +12,7 @@
     <string name="message_to_support">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="subject_to_support">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
     <string name="offerta_link">https://yandex.ru/legal/practicum_offer/</string>
+    <string name="clean_text_button_description">Удалить текст</string>
+
 
 </resources>
