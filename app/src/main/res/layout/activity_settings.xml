@@ -1,289 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    style="@style/BaseScreenLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/settings_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_marginBottom="@dimen/settings_height_layout"
-        android:background="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/TopLayout"
+        android:id="@+id/top_settings_toolbar"
+        app:title="@string/settings" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/settings_night_theme_switch"
+        style="@style/SettingsMenuContainer"
+        android:layout_marginTop="@dimen/def_padding"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/night_settings"
+        app:thumbTint="@color/switch_thumb"
+        app:trackTint="@color/switch_track"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_button_share"
+        style="@style/SettingsMenuContainer"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/share_settings"
+        android:drawableEnd="@drawable/baseline_share_24"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_support_button"
+        style="@style/SettingsMenuContainer"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/support_settings"
+        android:drawableEnd="@drawable/support_settings_img"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_contract_button"
+        style="@style/SettingsMenuContainer"
+        android:textAppearance="@style/SettingsMenuText"
+        android:text="@string/contract_settings"
+        android:drawableEnd="@drawable/contract_settings_img"/>
+
+</LinearLayout>
 
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:id="@+id/top_settings"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="@color/white"
-            android:paddingHorizontal="4dp"
-            android:paddingTop="@dimen/layout_padding_top">
-
-            <RelativeLayout
-                android:id="@+id/button_sear"
-                android:layout_width="@dimen/layout_blocks_height"
-                android:layout_height="@dimen/layout_blocks_height"
-                android:clipToOutline="true"
-                >
-                <ImageButton
-                    android:id="@+id/settings_back_button"
-                    android:layout_centerVertical="true"
-                    android:backgroundTint="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/back_button_arrow"/>
-
-            </RelativeLayout>
-
-
-
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="@dimen/layout_blocks_height">
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="12dp"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="@string/settings"
-                android:textColor="@color/YP_black"
-                android:textSize="@dimen/head_text_setting_size"
-                android:textStyle="bold" />
-</RelativeLayout>
-        </LinearLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:orientation="vertical">
-
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:layout_marginTop="@dimen/def_padding"
-                    android:background="@color/white"
-                    android:paddingHorizontal="@dimen/def_padding">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:text="@string/night_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size" />
-
-                    <Switch
-                        android:id="@+id/night_settings_switch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:paddingHorizontal="@dimen/def_padding">
-
-
-                    <TextView
-                        android:gravity=""
-                        android:id="@+id/share_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/share_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size"
-                        android:layout_centerVertical="true"/>
-
-
-                    <ImageView
-                        android:id="@+id/settings_share"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/baseline_share_24"
-                        android:layout_centerVertical="true"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:paddingHorizontal="@dimen/def_padding">
-
-
-                    <TextView
-                        android:id="@+id/support_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/support_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size"
-                        android:layout_centerVertical="true"/>
-
-
-                    <ImageView
-                        android:id="@+id/settings_support"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/support_settings_img"
-                        android:layout_centerVertical="true"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/settings_height_layout"
-                    android:paddingHorizontal="@dimen/def_padding"
-                    >
-
-
-                    <TextView
-                        android:id="@+id/contract_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/contract_settings"
-                        android:textColor="@color/YP_black"
-                        android:textSize="@dimen/def_settings_text_size"
-                        android:layout_centerVertical="true"/>
-
-
-                    <ImageView
-                        android:id="@+id/settings_contract"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/contract_settings_img" />
-                </RelativeLayout>
-
-            </LinearLayout>
-        </ScrollView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/tab_bar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/settings_height_layout"
-        android:layout_alignParentBottom="true"
-        android:clipToOutline="true"
-        android:background="@color/white"
-        android:orientation="horizontal">
-
-
-        <LinearLayout
-            android:id="@+id/bar_search_button"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bar_border_height"
-                android:background="@color/bar_border_color"
-                 />
-
-            <ImageView
-                android:layout_marginTop="@dimen/bar_padding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bar_serch"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/search"
-                android:textSize="@dimen/bar_text_size"
-                android:textColor="@color/YP_black"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/bar_media_button"
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bar_border_height"
-                android:background="@color/bar_border_color"
-                />
-
-            <ImageView
-                android:layout_marginTop="@dimen/bar_padding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bar_media"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/mediateka"
-                android:textSize="@dimen/bar_text_size"
-                android:textColor="@color/YP_black"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="@dimen/zero_dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bar_border_height"
-                android:background="@color/bar_border_color"
-                />
-
-            <ImageView
-                android:layout_marginTop="@dimen/bar_padding"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bar_settings_active"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/settings"
-                android:textSize="@dimen/bar_text_size"
-                android:textColor="@color/YP_blue"
-                android:layout_gravity="center"
-                />
-        </LinearLayout>
-    </LinearLayout>
-</RelativeLayout>
 

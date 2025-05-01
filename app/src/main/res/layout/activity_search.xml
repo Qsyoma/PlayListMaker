@@ -1,10 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+<LinearLayout
+    style="@style/BaseScreenLayout"
+    android:id="@+id/search_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/TopLayout"
+        android:id="@+id/top_search_toolbar"
+        app:title="@string/search" />
+
+    <FrameLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp">
+
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/edittext_rounded_bg"
+            android:drawableStart="@drawable/gray_search"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/ys_display_medium"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingHorizontal="12dp"
+            android:textColor="@color/YP_black"
+            android:textColorHint="?attr/colorOnSecondary"
+            android:textSize="16sp"
+            android:textCursorDrawable="@drawable/edit_text_cursor" />
+
+        <ImageButton
+            android:id="@+id/clear_text_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/clean_text_button_description"
+            android:src="@drawable/close_delete_text"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+
+  <!--  <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_alignParentBottom="true"
+         android:clipToOutline="true">
+
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/bar_border_height"
+             android:background="@color/YP_light_gray"/>
+
+         <LinearLayout
+             android:id="@+id/tab_bar"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/settings_height_layout"
+             android:background="@color/white"
+             android:orientation="horizontal">
+
+             <LinearLayout
+                 style="@style/TabBarButtonStyle"
+                 android:id="@+id/bar_search_button"
+                 >
+
+                 <ImageView
+                     style="@style/TabBarIconStyle"
+                     android:src="@drawable/bar_serch"/>
+
+                 <TextView
+                     style="@style/TabBarTextStyle"
+                     android:text="@string/search"
+                     android:textColor="@color/YP_blue"/>
+
+             </LinearLayout>
+
+             <LinearLayout
+                 android:id="@+id/bar_media_button"
+                 style="@style/TabBarButtonStyle">
+
+                 <ImageView
+                     style="@style/TabBarIconStyle"
+                     android:src="@drawable/bar_media"/>
+
+                 <TextView
+                     style="@style/TabBarTextStyle"
+                     android:text="@string/mediateka"
+                     android:textColor="?attr/colorOnPrimary"/>
+
+             </LinearLayout>
+
+
+             <LinearLayout
+                 style="@style/TabBarButtonStyle">
+
+                 <ImageView
+                     style="@style/TabBarIconStyle"
+                     android:src="@drawable/settings_inactive"/>
+
+                 <TextView
+                     style="@style/TabBarTextStyle"
+                     android:text="@string/settings"
+                     android:textColor="?attr/colorOnPrimary"/>
+
+             </LinearLayout>
+
+         </LinearLayout> -->
+
+</LinearLayout>
+
+
+
+
+
+
