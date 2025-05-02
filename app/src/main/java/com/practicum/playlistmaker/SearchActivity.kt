@@ -11,6 +11,9 @@ import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.google.android.material.appbar.MaterialToolbar
 
 
@@ -31,6 +34,14 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+
+        val recycler = findViewById<RecyclerView>(R.id.test_recycler)
+        recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        val trackAdapter = TrackAdapter(Track.trackList)
+        recycler.adapter = trackAdapter
+
+
+
 
         val backButton = findViewById<MaterialToolbar>(R.id.top_search_toolbar)
         val searchEditText = findViewById<EditText>(R.id.search_edit_text)
