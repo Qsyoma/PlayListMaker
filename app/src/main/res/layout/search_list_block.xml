@@ -51,7 +51,7 @@
         app:layout_constraintStart_toEndOf="@id/track_image"
         app:layout_constraintEnd_toStartOf="@id/dot_separator"
         app:layout_constraintTop_toBottomOf="@id/track_title"
-        tools:text="The Beatlesарлаопрлапрллдррлдллдлдлдлдлдллддллпропропроппропо" />
+        tools:text="The Beatles" />
 
     <ImageView
         android:id="@+id/dot_separator"
