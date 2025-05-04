@@ -10,7 +10,7 @@ data class Track(
         val trackList = arrayListOf(
             Track(
                 trackName = "Smells Like Teen Spirit",
-                artistName = "Nirvana",
+                artistName = "Nirvana hkjhkjhjkhjkhkjkhjkhjkhkhkhkhkkhkhkhkjhkjhkjhkjhkjhkhkjhkhkhkjhkhkjhkjhkjhkjh",
                 trackTime = "5:01",
                 artworkUrl100 = "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/7b/58/c2/7b58c21a-2b51-2bb2-e59a-9bb9b96ad8c3/00602567924166.rgb.jpg/100x100bb.jpg"
             ),
